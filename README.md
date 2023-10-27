@@ -98,7 +98,7 @@ Para usar la consulta AND puedes usar el método where las veces que necesites r
     Lo realizariamos así:
     $db->table('orders')
        ->where('purchaseid', '2')
-       ->where('status', 'activo'
+       ->where('status', 'activo')
        ->select(*)
        ->get();
 ~~~
