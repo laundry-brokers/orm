@@ -29,3 +29,34 @@ Una vez que hayas descargado el archivo puedes incluir las dos carpetas que vien
 ~~~
 
 Con está configuración ya podrías utilizar la variable $db para poder utilizar el orm.
+
+## Cómo utilizar los mapeos SQL
+
+SELECT simple
+~~~
+Ejemplo: Mostrar todos los usuarios SELECT * FROM users
+
+Ejemplo con el ORM:
+$db->table('users')
+   ->select('*')
+   ->get();
+~~~
+
+~~~
+Ejemplo: Mostrar un usuario por id = 1
+
+Uso con el ORM:
+$db->table('users')
+   ->select('*')
+   ->where('id', 1)
+   ->get();
+~~~
+
+~~~
+Ejemplo: Mostrar nombre y apellidos
+
+Uso con el ORM:
+$db->table('users')
+   ->select(['name', 'last_name'])
+   ->get();
+~~~
