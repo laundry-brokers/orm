@@ -126,7 +126,7 @@ Uso de INNER JOIN: El método JOIN lo puedes usar para poder unir dos o más tab
     Usando el ORM:
     $db->table('users')
        ->join('domains', 'users.id', '=', 'domains.user_id')
-       ->where('domains.user_id', '1')
+       ->where('user_id', '1')
        ->select('*')
        ->get();
 ~~~
