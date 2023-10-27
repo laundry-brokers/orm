@@ -121,7 +121,7 @@ Uso de INNER JOIN: El método JOIN lo puedes usar para poder unir dos o más tab
 
 ~~~
     Por ejemplo, digamos que necesitas unir la tabla users con la tabla domains para poder mostrar todos los dominios que pertenece a un usuario en particular con SQL lo harías de la siguiente manera:
-    SELECT * FROM users INNER JOIN domains ON users.id = domains.user_id WHERE domains.user_id = '1':
+    SELECT * FROM users INNER JOIN domains ON users.id = domains.user_id WHERE user_id = '1':
 
     Usando el ORM:
     $db->table('users')
