@@ -5,5 +5,27 @@ Un ORM para el manejo y mapeo de consultas SQL
 Primero que nada lo primero que tienes que hacer para poder utilizar el orm es descargar el repositorio y esto lo pudes hacer de la siguiente manera:
 
 ~~~
-git clone https://github.com/laundry-brokers/orm
+git clone https://github.com/laundry-brokers/orm.git
 ~~~
+
+Una vez que hayas descargado el archivo puedes incluir las dos carpetas que vienen dentro del Repositorio para poder utilizarlo
+- Primero si tienes tu conexión de la siguiente manera:
+
+~~~
+<?php 
+    include_once "./libs/database-connection/database.php";
+
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+    $conexion = mysqli_connect("localhost", "user", "password") or die ("Problemas con la conexión de la base de datos");
+    mysqli_select_db($conexion, "bd") or die ("Problemas al seleccionar la base de datos");
+    mysqli_set_charset($conexion, "utf8");
+
+    // Crear instancia de la clase Database
+    $db = new DatabaseConnection($conexion);
+?>
+~~~
+
+Con está configuración ya podrías utilizar la variable $db para poder utilizar el orm.
